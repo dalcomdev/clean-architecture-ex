@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "clean-architecture-ex"
 include ':app'
+include ':presentation'
+include ':domain'
+include ':data'

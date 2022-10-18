@@ -8,9 +8,9 @@ plugins {
 apply(from = "$rootDir/android.gradle")
 
 dependencies {
-//    implementation project(":data")
-//    implementation project(":domain")
-//    implementation project(":presentation")
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presentation"))
 
     Dependencies.Retrofit.apply {
         implementation(RETROFIT)
