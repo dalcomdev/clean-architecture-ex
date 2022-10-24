@@ -15,6 +15,11 @@ dependencies {
         implementation(MATERIAL)
     }
 
+    Dependencies.Hilt.apply {
+        implementation(HILT_ANDROID)
+        annotationProcessor(HILT_COMPILER)
+    }
+
     Dependencies.JUnit.apply {
         testImplementation(JUNIT)
         androidTestImplementation(EXT_JUNIT)

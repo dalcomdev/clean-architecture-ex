@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 apply(from = "$rootDir/android.gradle")
@@ -9,10 +11,17 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":domain")))
+
     Dependencies.AndroidX.apply {
         implementation(CORE_KTX)
         implementation(APP_COMPAT)
         implementation(MATERIAL)
+    }
+
+    Dependencies.Hilt.apply {
+        implementation(HILT_ANDROID)
+        annotationProcessor(HILT_COMPILER)
     }
 
     Dependencies.JUnit.apply {

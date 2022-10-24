@@ -31,5 +31,6 @@ object Dependencies {
         const val CORE_KTX = "androidx.core:core-ktx:1.9.0"
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.5.1"
         const val MATERIAL = "com.google.android.material:material:1.7.0"
+        const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.1.4"
     }
 }
