@@ -6,6 +6,9 @@ plugins {
 }
 
 apply(from = "$rootDir/android.gradle")
+android {
+    namespace = "io.github.dalcomdev.caex"
+}
 
 dependencies {
     implementation(project(":data"))
