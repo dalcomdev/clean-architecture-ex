@@ -18,6 +18,10 @@ dependencies {
         implementation(CONSTRAINTLAYOUT)
         implementation(CORE_KTX)
         implementation(MATERIAL)
+        implementation(LIFECYCLE_VIEWMODEL_KTX)
+        implementation(LIFECYCLE_LIVEDATA_KTX)
+        implementation(FRAGMENT_KTX)
+        implementation(ACTIVITY_KTX)
     }
 
     Dependencies.Hilt.apply {

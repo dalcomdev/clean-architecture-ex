@@ -32,5 +32,9 @@ object Dependencies {
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.5.1"
         const val MATERIAL = "com.google.android.material:material:1.7.0"
         const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.1.4"
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.6.0"
+        const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.5.3"
+        const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+        const val LIFECYCLE_LIVEDATA_KTX  = "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
     }
 }
