@@ -1,5 +1,7 @@
+import Dependencies.Retrofit.CONVERTER_GSON
+
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
@@ -11,7 +13,14 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(":domain"))
+
+    Dependencies.Retrofit.apply {
+        implementation(RETROFIT)
+        implementation(CONVERTER_GSON)
+        implementation(OKHTTP3_OKHTTP)
+        implementation(OKHTTP3_LOGGING_INTERCEPTOR)
+    }
 
     Dependencies.AndroidX.apply {
         implementation(CORE_KTX)
@@ -19,9 +28,13 @@ dependencies {
         implementation(MATERIAL)
     }
 
+    Dependencies.Google.apply {
+        implementation(GSON)
+    }
+
     Dependencies.Hilt.apply {
         implementation(HILT_ANDROID)
-        annotationProcessor(HILT_COMPILER)
+        kapt(HILT_ANDROID_COMPILER)
     }
 
     Dependencies.JUnit.apply {

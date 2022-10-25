@@ -1,4 +1,4 @@
-package io.github.dalcomdev.data
+package io.github.dalcomdev.data.model
 
 import com.google.gson.annotations.SerializedName
 import io.github.dalcomdev.domain.model.GithubRepo

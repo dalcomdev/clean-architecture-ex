@@ -15,5 +15,17 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(ActivityMa
         super.onCreate(savedInstanceState)
 
         binding.recyclerView.adapter = GithubAdapter()
+        binding.submitBtn.setOnClickListener {
+            val owner = binding.ownerEditText.text.toString()
+            viewModel.getGithubRepositories(owner)
+        }
+
+        subscribeLiveData()
+    }
+
+    private fun subscribeLiveData() {
+        viewModel.githubRepositories.observe(this) {
+            (binding.recyclerView.adapter as GithubAdapter).setItems(it)
+        }
     }
 }

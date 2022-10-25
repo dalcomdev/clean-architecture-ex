@@ -28,12 +28,12 @@ dependencies {
 
     Dependencies.Room.apply {
         implementation(RUNTIME)
-        annotationProcessor(COMPILER)
+        kapt(COMPILER)
     }
 
     Dependencies.Hilt.apply {
         implementation(HILT_ANDROID)
-        annotationProcessor(HILT_COMPILER)
+        kapt(HILT_ANDROID_COMPILER)
     }
 
     Dependencies.JUnit.apply {

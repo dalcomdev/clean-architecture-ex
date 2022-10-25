@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import io.github.dalcomdev.data.service.GithubService
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -50,5 +51,11 @@ internal object ApiModule {
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRemoteService(retrofit: Retrofit): GithubService {
+        return retrofit.create(GithubService::class.java)
     }
 }

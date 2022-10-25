@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
@@ -15,7 +15,7 @@ dependencies {
 
     Dependencies.AndroidX.apply {
         implementation(APP_COMPAT)
-        implementation(CONSTRAINTLAYOUT)
+        implementation(CONSTRAINT_LAYOUT)
         implementation(CORE_KTX)
         implementation(MATERIAL)
         implementation(LIFECYCLE_VIEWMODEL_KTX)
@@ -26,7 +26,7 @@ dependencies {
 
     Dependencies.Hilt.apply {
         implementation(HILT_ANDROID)
-        annotationProcessor(HILT_COMPILER)
+        kapt(HILT_ANDROID_COMPILER)
     }
 
     Dependencies.JUnit.apply {

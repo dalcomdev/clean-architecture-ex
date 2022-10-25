@@ -1,6 +1,10 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 apply(from = "$rootDir/android.gradle")
@@ -17,7 +21,7 @@ dependencies {
 
     Dependencies.Hilt.apply {
         implementation(HILT_ANDROID)
-        annotationProcessor(HILT_COMPILER)
+        kapt(HILT_ANDROID_COMPILER)
     }
 
     Dependencies.JUnit.apply {
