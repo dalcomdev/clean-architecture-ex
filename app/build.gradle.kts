@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -8,6 +10,10 @@ plugins {
 apply(from = "$rootDir/android.gradle")
 android {
     namespace = "io.github.dalcomdev.caex"
+
+    defaultConfig {
+        buildConfigField("String", "API_NINJAS_API_KEY", getProperty("api_ninjas_api_key"))
+    }
 }
 
 dependencies {
@@ -41,4 +47,8 @@ dependencies {
         androidTestImplementation(EXT_JUNIT)
         androidTestImplementation(ESPRESSO_CORE)
     }
+}
+
+fun getProperty(propertyKey: String): String {
+    return gradleLocalProperties(rootDir).getProperty(propertyKey)
 }
